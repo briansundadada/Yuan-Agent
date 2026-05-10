@@ -73,7 +73,7 @@ Run the pipeline in this order:
 python scripts\run_fundamental_analyst_reports.py
 python scripts\run_quarterly_eda_only.py
 python scripts\run_quarterly_2021_2023_training.py
-python scripts\run_quarterly_2024_test.py
+python scripts\run_quarterly_2024_test.py logs\quarterly_2021_2023_training\active_rules_final.json
 ```
 
 The scripts print stage timing. DeepSeek calls also print elapsed time and token usage when the API returns usage data.
@@ -96,7 +96,7 @@ The 2024 backtest outputs are written to:
 logs/quarterly_2024_test_final_rules/
 ```
 
-By default, the 2024 backtest reads `data/rules/rules.json`. If you want to test the freshly trained rules, review `active_rules_final.json` and replace `data/rules/rules.json` with that trained rule file.
+By default, the 2024 backtest reads `data/rules/rules.json`. You can pass a trained rule file as the first argument, as shown above, to test the freshly trained rules without overwriting the base rules.
 
 The generated `logs/` contents are ignored by Git so experiment outputs do not clutter the repository.
 
