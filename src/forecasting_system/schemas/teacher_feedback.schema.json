@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TeacherFeedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metric",
+    "evaluation_label",
+    "error_type",
+    "explanation",
+    "supervision_snapshot",
+    "comparison_summary"
+  ],
+  "properties": {
+    "metric": {
+      "type": "string",
+      "enum": ["roa"]
+    },
+    "evaluation_label": {"type": "string", "minLength": 1},
+    "error_type": {
+      "type": "string",
+      "enum": [
+        "direction_error",
+        "magnitude_error",
+        "attribution_error",
+        "invalid_supervision",
+        "none"
+      ]
+    },
+    "explanation": {"type": "string", "minLength": 1},
+    "supervision_snapshot": {
+      "type": "object"
+    },
+    "comparison_summary": {
+      "type": "object"
+    }
+  }
+}

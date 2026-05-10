@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StudentRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metric",
+    "input_events",
+    "baseline_state",
+    "matched_rules",
+    "function_calls",
+    "intermediate_values",
+    "final_prediction"
+  ],
+  "properties": {
+    "metric": {
+      "type": "string",
+      "enum": ["roa"]
+    },
+    "input_events": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "baseline_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profit_margin", "asset_turnover", "equity_multiplier"],
+      "properties": {
+        "profit_margin": {"type": "number"},
+        "asset_turnover": {"type": "number"},
+        "equity_multiplier": {"type": "number"}
+      }
+    },
+    "matched_rules": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "function_calls": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "intermediate_values": {
+      "type": "object",
+      "additionalProperties": {"type": "number"}
+    },
+    "final_prediction": {
+      "type": "object",
+      "additionalProperties": {"type": "number"},
+      "required": ["roa"]
+    }
+  }
+}

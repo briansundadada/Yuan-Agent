@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "trigger",
+    "target_component",
+    "function_name",
+    "params",
+    "explanation"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario", "event_type", "direction"],
+      "properties": {
+        "scenario": {"type": "string", "minLength": 1},
+        "event_type": {"type": "string", "minLength": 1},
+        "direction": {
+          "type": "string",
+          "enum": ["increase", "decrease", "neutral"]
+        }
+      }
+    },
+    "target_component": {
+      "type": "string",
+      "enum": ["profit_margin", "asset_turnover"]
+    },
+    "function_name": {
+      "type": "string",
+      "enum": ["linear_adjustment"]
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_impact"],
+      "properties": {
+        "base_impact": {"type": "number"}
+      }
+    },
+    "lag": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "business_chain": {
+      "type": "string"
+    },
+    "fundamental_basis": {
+      "type": "string"
+    },
+    "operating_metric_links": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

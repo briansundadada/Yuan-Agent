@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario",
+    "event_type",
+    "direction",
+    "strength",
+    "relevance",
+    "lag",
+    "duration",
+    "noise"
+  ],
+  "properties": {
+    "scenario": {"type": "string", "minLength": 1},
+    "event_type": {"type": "string", "minLength": 1},
+    "direction": {
+      "type": "string",
+      "enum": ["increase", "decrease", "neutral"]
+    },
+    "strength": {"type": "number"},
+    "relevance": {"type": "number"},
+    "lag": {"type": "integer", "minimum": 0},
+    "duration": {"type": "integer", "minimum": 0},
+    "noise": {"type": "boolean"}
+  }
+}

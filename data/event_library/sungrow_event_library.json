@@ -1,0 +1,46 @@
+{
+  "raw_materials": {
+    "event_types": [
+      "upstream_price",
+      "supply_condition",
+      "industry_policy",
+      "cost_volatility"
+    ]
+  },
+  "manufacturing": {
+    "event_types": [
+      "manufacturing_technology",
+      "production_efficiency",
+      "capacity",
+      "factory_expansion"
+    ]
+  },
+  "sales_demand": {
+    "event_types": [
+      "major_order",
+      "demand",
+      "market_share"
+    ]
+  },
+  "policy_regulation": {
+    "event_types": [
+      "subsidy",
+      "tariff",
+      "regulatory_support"
+    ]
+  },
+  "overseas_trade": {
+    "event_types": [
+      "export",
+      "trade_barrier",
+      "exchange_rate"
+    ]
+  },
+  "technology_competition": {
+    "event_types": [
+      "new_product",
+      "technology_competition",
+      "competitor_position"
+    ]
+  }
+}

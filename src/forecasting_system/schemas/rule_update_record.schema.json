@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RuleUpdateRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["updated_rules", "rule_update_records", "explanation"],
+  "properties": {
+    "updated_rules": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "rule_update_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rule_id", "field", "previous_value", "new_value", "reason"],
+        "properties": {
+          "rule_id": {"type": "string", "minLength": 1},
+          "field": {"type": "string", "enum": ["params.base_impact", "lag", "duration"]},
+          "previous_value": {"type": "number"},
+          "new_value": {"type": "number"},
+          "source_month": {"type": ["integer", "null"]},
+          "rule_version": {"type": ["integer", "null"]},
+          "teacher_label": {"type": ["string", "null"]},
+          "error_type": {"type": ["string", "null"]},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "explanation": {"type": "string", "minLength": 1}
+  }
+}

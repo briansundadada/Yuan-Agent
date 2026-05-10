@@ -1,0 +1,877 @@
+﻿[
+  {
+    "rule_id": "raw_materials_upstream_price_increase",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "upstream_price",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Higher upstream prices increase costs and reduce profit margin.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_upstream_price_decrease",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "upstream_price",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.02
+    },
+    "explanation": "Lower upstream prices reduce costs and improve profit margin.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_supply_condition_increase",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "supply_condition",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.015
+    },
+    "explanation": "Tighter supply conditions increase cost pressure and reduce margins.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_supply_condition_decrease",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "supply_condition",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Easing supply conditions relieve cost pressure and support margins.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_industry_policy_increase",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "industry_policy",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.011999999999999999
+    },
+    "explanation": "Supportive industry policy improves pricing discipline and profit margin.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_industry_policy_decrease",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "industry_policy",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.01
+    },
+    "explanation": "Weaker industry policy support increases competition and hurts margins.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_cost_volatility_increase",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "cost_volatility",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.011999999999999999
+    },
+    "explanation": "Higher raw material cost volatility increases margin uncertainty and downside risk.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "raw_materials_cost_volatility_decrease",
+    "trigger": {
+      "scenario": "raw_materials",
+      "event_type": "cost_volatility",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.008
+    },
+    "explanation": "Lower cost volatility supports margin stability.",
+    "business_chain": "raw material and component prices -> cost of goods sold -> gross margin / profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "profit_margin",
+      "inventory",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_manufacturing_technology_increase",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "manufacturing_technology",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Improved manufacturing technology supports efficiency and profit margin.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_manufacturing_technology_decrease",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "manufacturing_technology",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.01
+    },
+    "explanation": "Weakening manufacturing technology advantage reduces margin support.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_production_efficiency_increase",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "production_efficiency",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.02
+    },
+    "explanation": "Higher production efficiency improves asset turnover.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_production_efficiency_decrease",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "production_efficiency",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Lower production efficiency reduces asset turnover.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_capacity_increase",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "capacity",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Capacity expansion supports future sales realization and turnover.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_capacity_decrease",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "capacity",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.01
+    },
+    "explanation": "Reduced capacity weakens turnover potential.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_factory_expansion_increase",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "factory_expansion",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.011999999999999999
+    },
+    "explanation": "Factory expansion supports long-term production scale and turnover.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "manufacturing_factory_expansion_decrease",
+    "trigger": {
+      "scenario": "manufacturing",
+      "event_type": "factory_expansion",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.008
+    },
+    "explanation": "Slower factory expansion weakens expected turnover growth.",
+    "business_chain": "capacity, factories, and manufacturing efficiency -> delivery capability and fixed asset base -> asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "fixed_assets",
+      "total_assets",
+      "asset_turnover",
+      "inventory"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_major_order_increase",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "major_order",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.025
+    },
+    "explanation": "Winning major orders boosts turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_major_order_decrease",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "major_order",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Loss or weakening of major order flow reduces turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_demand_increase",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "demand",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.02
+    },
+    "explanation": "Higher demand increases asset turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_demand_decrease",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "demand",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Lower demand reduces asset turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_market_share_increase",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "market_share",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Market share gains support sales capture and turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "sales_demand_market_share_decrease",
+    "trigger": {
+      "scenario": "sales_demand",
+      "event_type": "market_share",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.015
+    },
+    "explanation": "Market share losses weaken turnover.",
+    "business_chain": "orders, demand, and market share -> revenue recognition -> asset_turnover and profit_margin -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "net_profit",
+      "asset_turnover",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_subsidy_increase",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "subsidy",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Higher subsidies support profit margin.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_subsidy_decrease",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "subsidy",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.015
+    },
+    "explanation": "Lower subsidies weaken profit margin support.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_tariff_increase",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "tariff",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Higher tariffs weaken export competitiveness and turnover.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_tariff_decrease",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "tariff",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.02
+    },
+    "explanation": "Lower tariffs improve export conditions and turnover.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_regulatory_support_increase",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "regulatory_support",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.011999999999999999
+    },
+    "explanation": "Stronger regulatory support improves operating conditions and turnover.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "policy_regulation_regulatory_support_decrease",
+    "trigger": {
+      "scenario": "policy_regulation",
+      "event_type": "regulatory_support",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.01
+    },
+    "explanation": "Weaker regulatory support reduces turnover support.",
+    "business_chain": "policy support and grid/renewable regulation -> demand visibility and project execution -> revenue and asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "revenue",
+      "asset_turnover",
+      "operating_cash_flow"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_export_increase",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "export",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.02
+    },
+    "explanation": "Export growth increases turnover.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_export_decrease",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "export",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.02
+    },
+    "explanation": "Export decline reduces turnover.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_trade_barrier_increase",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "trade_barrier",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.018
+    },
+    "explanation": "Higher trade barriers reduce overseas sales efficiency and turnover.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_trade_barrier_decrease",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "trade_barrier",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Lower trade barriers support turnover.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_exchange_rate_increase",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "exchange_rate",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.008
+    },
+    "explanation": "Higher exchange-rate volatility or adverse FX moves may hurt margin visibility.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "overseas_trade_exchange_rate_decrease",
+    "trigger": {
+      "scenario": "overseas_trade",
+      "event_type": "exchange_rate",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.005999999999999999
+    },
+    "explanation": "Lower FX pressure supports margin stability.",
+    "business_chain": "overseas shipments and trade conditions -> overseas revenue, pricing, collection cycle -> margin / turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "overseas_revenue_share",
+      "revenue",
+      "gross_margin",
+      "accounts_receivable"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_new_product_increase",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "new_product",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.011999999999999999
+    },
+    "explanation": "Successful new product progress supports turnover.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_new_product_decrease",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "new_product",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.01
+    },
+    "explanation": "Weak new product momentum reduces turnover support.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_technology_competition_increase",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "technology_competition",
+      "direction": "increase"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.011999999999999999
+    },
+    "explanation": "Stronger technology competition may compress margins.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_technology_competition_decrease",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "technology_competition",
+      "direction": "decrease"
+    },
+    "target_component": "profit_margin",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.01
+    },
+    "explanation": "Reduced technology competition supports margin.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_competitor_position_increase",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "competitor_position",
+      "direction": "increase"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": -0.015
+    },
+    "explanation": "Improving competitor position may reduce Sungrow's turnover.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  },
+  {
+    "rule_id": "technology_competition_competitor_position_decrease",
+    "trigger": {
+      "scenario": "technology_competition",
+      "event_type": "competitor_position",
+      "direction": "decrease"
+    },
+    "target_component": "asset_turnover",
+    "function_name": "linear_adjustment",
+    "params": {
+      "base_impact": 0.015
+    },
+    "explanation": "Weakening competitor position may support Sungrow's turnover.",
+    "business_chain": "product technology and competitive position -> pricing power and conversion efficiency -> profit_margin / asset_turnover -> cumulative ROA",
+    "fundamental_basis": "Fundamental Analyst business-model prior from Sungrow 2020 annual report and later disclosed reports; metadata only, base_impact unchanged.",
+    "operating_metric_links": [
+      "gross_margin",
+      "revenue",
+      "research_and_development",
+      "profit_margin"
+    ]
+  }
+]
+
